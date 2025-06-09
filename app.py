@@ -13,7 +13,7 @@ class ImageInput(BaseModel):
     image: str  # base64 string
 
 class StorySegmentGenerator:
-    def _init_(self, model_path="yolov8n.pt", narration_interval=10):
+    def __init__(self, model_path="yolov8n.pt", narration_interval=10):
         self.model = YOLO(model_path)
         self.narration_interval = narration_interval
         self.last_narration_time = time.time()

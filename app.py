@@ -99,6 +99,12 @@ class StorySegmentGenerator:
 # Initialize story generator
 story_gen = StorySegmentGenerator()
 
+
+@app.get("/")
+def read_root():
+    return {"message": "Backend is up and running!"}
+
+
 @app.post("/upload_image/")
 async def upload_image(data: ImageInput):
     segment = story_gen.handle_image_input(data.image)
